@@ -136,18 +136,6 @@ function renderHero(movie) {
 
 // ── RENDER METADATA ─────────────────────────────────────────
 function renderMetadata(movie) {
-    // Sidebar poster
-    const sidebarPoster = document.getElementById('sidebar-poster-img');
-    if (sidebarPoster) {
-        sidebarPoster.src = movie.poster;
-        sidebarPoster.alt = movie.title;
-    }
-    // Sidebar trailer btn
-    const sidebarTrailerBtn = document.getElementById('sidebar-btn-trailer');
-    if (sidebarTrailerBtn) {
-        sidebarTrailerBtn.onclick = () => openTrailerModal(movie.trailer, movie.trailerWatch);
-    }
-
     // Synopsis
     const synopsisEl = document.getElementById('synopsis-text');
     if (synopsisEl) synopsisEl.textContent = movie.synopsis || '';

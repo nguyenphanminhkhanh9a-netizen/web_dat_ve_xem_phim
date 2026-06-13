@@ -51,25 +51,21 @@
             <span class="current" id="breadcrumb-movie-name">Đang tải...</span>
         </nav>
 
-        <!-- HERO / BACKDROP -->
-        <section class="detail-hero" id="detail-hero">
-            <div class="detail-hero-backdrop" id="hero-backdrop"></div>
-            <div class="detail-hero-gradient"></div>
-            <div class="detail-hero-content">
-                <!-- Poster dọc -->
-                <div class="detail-hero-poster" id="hero-poster-wrap">
+        <!-- COMBINED MOVIE DETAIL HEADER -->
+        <section class="detail-combined" id="detail-hero">
+            <div class="detail-combined-backdrop" id="hero-backdrop"></div>
+            <div class="detail-combined-gradient"></div>
+            <div class="detail-combined-content">
+                <!-- Poster -->
+                <div class="detail-combined-poster" id="hero-poster-wrap">
                     <img id="hero-poster-img" src="" alt="Movie Poster">
                 </div>
-                <!-- Info -->
-                <div class="detail-hero-info">
-                    <div class="detail-hero-badges" id="hero-badges">
-                        <!-- Rendered by JS -->
-                    </div>
+                <!-- Info panel -->
+                <div class="detail-combined-info">
+                    <div class="detail-hero-badges" id="hero-badges"></div>
                     <h1 class="detail-hero-title" id="hero-title">Đang tải...</h1>
                     <p class="detail-hero-title-en" id="hero-title-en"></p>
-                    <div class="detail-hero-meta-row" id="hero-meta-row">
-                        <!-- Rendered by JS -->
-                    </div>
+                    <div class="detail-hero-meta-row" id="hero-meta-row"></div>
                     <div class="detail-hero-actions">
                         <button class="btn-buy-ticket" id="hero-btn-book" onclick="scrollToShowtimes()">
                             <i class="fas fa-ticket-alt"></i> Mua vé ngay
@@ -79,56 +75,27 @@
                             Xem Trailer
                         </button>
                     </div>
+                    <div class="detail-combined-section">
+                        <p class="detail-section-label">Nội dung phim</p>
+                        <div class="detail-synopsis collapsed" id="synopsis-text"></div>
+                        <button class="detail-synopsis-toggle" id="synopsis-toggle">
+                            <i class="fas fa-chevron-down" id="synopsis-icon"></i>
+                            <span id="synopsis-toggle-label">Xem thêm</span>
+                        </button>
+                    </div>
+                    <div class="detail-meta-grid" id="meta-grid"></div>
+                    <div class="detail-combined-cast">
+                        <p class="detail-section-label">Diễn viên</p>
+                        <div class="cast-list" id="cast-list"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ── CONTENT AREA ──────────────────────────────────── -->
+        <!-- CONTENT AREA -->
         <div class="detail-main">
 
-            <!-- 1. METADATA & SYNOPSIS -->
-            <section class="detail-metadata" id="section-metadata">
 
-                <!-- Sidebar: poster + CTA -->
-                <aside class="detail-sidebar">
-                    <div class="detail-sidebar-poster">
-                        <img id="sidebar-poster-img" src="" alt="Poster">
-                    </div>
-                    <div class="detail-sidebar-actions">
-                        <button class="btn-buy-ticket" onclick="scrollToShowtimes()">
-                            <i class="fas fa-ticket-alt"></i> Mua vé ngay
-                        </button>
-                        <button class="btn-trailer" id="sidebar-btn-trailer">
-                            <span class="play-icon"><i class="fas fa-play"></i></span>
-                            Xem Trailer
-                        </button>
-                    </div>
-                </aside>
-
-                <!-- Body: info -->
-                <div class="detail-info-body">
-                    <p class="detail-section-label">Nội dung phim</p>
-                    <div class="detail-synopsis collapsed" id="synopsis-text">
-                        <!-- Rendered by JS -->
-                    </div>
-                    <button class="detail-synopsis-toggle" id="synopsis-toggle">
-                        <i class="fas fa-chevron-down" id="synopsis-icon"></i>
-                        <span id="synopsis-toggle-label">Xem thêm</span>
-                    </button>
-
-                    <div class="detail-meta-grid" id="meta-grid">
-                        <!-- Rendered by JS -->
-                    </div>
-
-                    <!-- Cast -->
-                    <div style="margin-top: 28px;">
-                        <p class="detail-section-label">Diễn viên</p>
-                        <div class="cast-list" id="cast-list">
-                            <!-- Rendered by JS -->
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <!-- 2. SHOWTIMES -->
             <section class="detail-showtimes" id="section-showtimes">
@@ -412,3 +379,4 @@
     <script src="js/movie-detail.js"></script>
 </body>
 </html>
+
