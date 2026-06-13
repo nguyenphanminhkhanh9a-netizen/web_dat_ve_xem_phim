@@ -339,25 +339,6 @@ function renderRatings(movie) {
             const stars = Array.from({length: 10}, (_, i) =>
                 `<i class="${i < rev.rating ? 'fas' : 'far'} fa-star star ${i < rev.rating ? 'filled' : ''}"></i>`
             ).join('');
-            if (rev.hasSpoiler) {
-                return `
-                    <div class="review-card">
-                        <div class="review-header">
-                            <img class="review-avatar" src="${rev.avatar}" alt="${rev.user}" loading="lazy">
-                            <div class="review-user-info">
-                                <div class="user-name">${rev.user}</div>
-                                <div class="review-date">${rev.date}</div>
-                            </div>
-                            <div class="review-stars">${stars}</div>
-                        </div>
-                        <div class="spoiler-warning" onclick="revealSpoiler(${idx})" id="spoiler-warn-${idx}">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            Bình luận có Spoiler — Nhấn để hiển thị
-                        </div>
-                        <p class="review-text spoiler-text" id="spoiler-text-${idx}">${rev.text}</p>
-                    </div>
-                `;
-            }
             return `
                 <div class="review-card">
                     <div class="review-header">
@@ -375,17 +356,7 @@ function renderRatings(movie) {
     }
 }
 
-function revealSpoiler(idx) {
-    const textEl = document.getElementById(`spoiler-text-${idx}`);
-    const warnEl = document.getElementById(`spoiler-warn-${idx}`);
-    if (textEl) textEl.classList.toggle('revealed');
-    if (warnEl) {
-        const isRevealed = textEl?.classList.contains('revealed');
-        warnEl.innerHTML = isRevealed
-            ? '<i class="fas fa-eye-slash"></i> Ẩn Spoiler'
-            : '<i class="fas fa-exclamation-triangle"></i> Bình luận có Spoiler — Nhấn để hiển thị';
-    }
-}
+
 
 // ── MEDIA GALLERY ────────────────────────────────────────────
 function renderGallery(movie) {

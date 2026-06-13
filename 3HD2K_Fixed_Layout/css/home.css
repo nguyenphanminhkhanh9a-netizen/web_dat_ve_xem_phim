@@ -178,6 +178,7 @@
 }
 
 .poster {
+    display: block;
     height: 320px;
     background-color: var(--bg-elevated);
     background-size: cover;

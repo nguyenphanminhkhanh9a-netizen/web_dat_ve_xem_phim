@@ -761,11 +761,7 @@
     font-size: 4.5rem;
     font-weight: 900;
     line-height: 1;
-    color: var(--text-main);
-    background: linear-gradient(135deg, #fff, rgba(255,255,255,0.6));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
 }
 .rating-big-denom {
     font-size: 1.5rem;
@@ -901,24 +897,7 @@
     color: rgba(255,255,255,0.75);
 }
 
-.spoiler-warning {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: rgba(243,156,18,0.12);
-    border: 1px solid rgba(243,156,18,0.3);
-    border-radius: 4px;
-    font-size: 0.8rem;
-    color: #ffd07d;
-    margin-bottom: 8px;
-    cursor: pointer;
-    transition: background 0.2s;
-    user-select: none;
-}
-.spoiler-warning:hover { background: rgba(243,156,18,0.2); }
-.spoiler-text { filter: blur(5px); transition: filter 0.3s; }
-.spoiler-text.revealed { filter: none; }
+
 
 /* ── MEDIA GALLERY ────────────────────────────────────────── */
 .detail-media {
