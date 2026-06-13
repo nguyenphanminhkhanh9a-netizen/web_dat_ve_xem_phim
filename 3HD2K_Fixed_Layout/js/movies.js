@@ -58,13 +58,20 @@ function renderMoviesGrid(movies) {
 
     moviesToShow.forEach(movie => {
         const badgeClass = getAgeBadgeClass(movie.age);
+        const detailUrl = movie.id ? `movie-detail.html?id=${movie.id}` : '#';
         const cardHtml = `
-            <div class="movie-card">
+            <div class="movie-card" onclick="window.location.href='${detailUrl}'" style="cursor:pointer;">
                 <div class="poster ${movie.poster ? '' : 'placeholder'}" ${movie.poster ? `style="background-image: url('${movie.poster}')"` : ''}>
                     <span class="age-badge-overlay ${badgeClass}">${movie.age}</span>
+                    <div class="poster-overlay">
+                        <span class="overlay-text">Xem thêm</span>
+                        <a href="${detailUrl}" class="btn-book" onclick="event.stopPropagation()">
+                            ${currentTab === 'now-showing' ? 'Đặt vé ngay' : 'Đặt trước vé'}
+                        </a>
+                    </div>
                 </div>
                 <div class="movie-info">
-                    <h3>${movie.title}</h3>
+                    <h3><a href="${detailUrl}">${movie.title}</a></h3>
                     <div class="movie-sub">
                         <span class="genre">${movie.genre || ''}</span>
                         <span>${movie.duration}</span>
