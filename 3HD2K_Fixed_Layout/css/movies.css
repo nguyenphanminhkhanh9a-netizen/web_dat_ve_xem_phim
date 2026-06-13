@@ -331,37 +331,76 @@
 }
 
 /* Movie info below poster */
-.movies-grid .movie-info {
+.movies-grid .info {
     padding: 0 2px;
 }
 
-.movies-grid .movie-info h3 {
+.movies-grid .info h3 {
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--text-main);
     letter-spacing: normal;
 }
 
-.movies-grid .movie-info .movie-sub {
+.movies-grid .info h3 a {
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.movies-grid .info h3 a:hover {
+    color: white;
+}
+
+.movies-grid .tags {
     display: flex;
-    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.movies-grid .tag {
+    border: 1px solid var(--text-muted);
+    padding: 1px 6px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-radius: 2px;
+}
+
+.movies-grid .movie-meta-row {
+    display: flex;
     align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.movies-grid .duration {
     font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
     color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.movies-grid .movie-info .movie-sub .genre {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 65%;
+.movies-grid .duration i {
+    font-size: 0.75rem;
 }
+
+.movies-grid .age-badge {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--primary-red);
+    padding: 1px 7px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+}
+
+
 
 /* --- LOAD MORE BUTTON --- */
 .load-more-container {

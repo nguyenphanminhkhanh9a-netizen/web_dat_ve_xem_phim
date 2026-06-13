@@ -306,7 +306,7 @@ const comingSoonMovies = [
         duration: "106 phút",
         age: "T13",
         genre: "Anime, Tình Cảm",
-        tags: ["2D"],
+        tags: ["2D", "Anime"],
         formats: ["2D"],
         poster: "images/Kimi-no-Na-wa.-Visual.jpg",
         backdrop: "https://images.unsplash.com/photo-1580655653885-65763b2597d1?auto=format&fit=crop&w=1920&q=80",

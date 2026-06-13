@@ -137,16 +137,17 @@ function renderNowShowing(movies) {
     movies.forEach(movie => {
         const tagsHtml = movie.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
         
+        const detailUrl = `movie-detail.html?id=${movie.id}`;
         const cardHtml = `
-            <div class="movie-card">
-                <div class="poster" style="background-image: url('${movie.poster}')">
+            <div class="movie-card" onclick="window.location.href='${detailUrl}'" style="cursor:pointer;">
+                <a href="${detailUrl}" class="poster" style="background-image: url('${movie.poster}')" aria-label="Xem chi tiết ${movie.title}">
                     <div class="poster-overlay">
                         <span class="overlay-text">Xem thêm</span>
-                        <a href="#" class="btn-book">Đặt vé ngay</a>
+                        <span class="btn-book" onclick="event.preventDefault(); window.location.href='${detailUrl}'">Đặt vé ngay</span>
                     </div>
-                </div>
+                </a>
                 <div class="info">
-                    <h3>${movie.title}</h3>
+                    <h3><a href="${detailUrl}">${movie.title}</a></h3>
                     <div class="movie-meta-row">
                         <span class="duration"><i class="far fa-clock"></i> ${movie.duration}</span>
                         <span class="age-badge">${movie.age}</span>

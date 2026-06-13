@@ -19,7 +19,7 @@
             <a href="index.html" class="logo">3HD2K</a>
             <nav class="nav-links">
                 <a href="#" class="active">Trang chủ</a>
-                <a href="movies.html">Phim Đang Chiếu</a>
+                <a href="movies.html?tab=now-showing">Phim Đang Chiếu</a>
                 <a href="cinemas.html">Cụm Rạp</a>
                 <a href="#">Khuyến Mãi</a>
                 <a href="#">Đặt vé</a>
@@ -166,7 +166,7 @@
                 <a href="movies.html?tab=coming-soon" class="see-all">Xem tất cả <i class="fas fa-chevron-right"></i></a>
             </div>
             <div class="movie-grid">
-                <div class="movie-card">
+                <div class="movie-card" onclick="window.location.href='movie-detail.html?id=gran-turismo'" style="cursor:pointer;">
                     <a href="movie-detail.html?id=gran-turismo" class="poster" style="background-image: url('images/Gran_Turismo.jpg')" aria-label="Xem chi tiết Gran Turismo">
                         <div class="poster-overlay">
                             <span class="overlay-text">Xem thêm</span>
@@ -182,7 +182,7 @@
                         <div class="tags"><span class="tag">IMAX</span><span class="tag">Hành Động</span></div>
                     </div>
                 </div>
-                <div class="movie-card">
+                <div class="movie-card" onclick="window.location.href='movie-detail.html?id=world-war-z'" style="cursor:pointer;">
                     <a href="movie-detail.html?id=world-war-z" class="poster" style="background-image: url('https://m.media-amazon.com/images/M/MV5BODg3ZTM2YWQtZDE5Ny00NGNiLTkzYjgtYWVlYjNkOTg5NDI1XkEyXkFqcGc@.jpg')" aria-label="Xem chi tiết World War Z">
                         <div class="poster-overlay">
                             <span class="overlay-text">Xem thêm</span>
@@ -198,7 +198,7 @@
                         <div class="tags"><span class="tag">2D</span><span class="tag">Hành Động</span></div>
                     </div>
                 </div>
-                <div class="movie-card">
+                <div class="movie-card" onclick="window.location.href='movie-detail.html?id=moon-fall'" style="cursor:pointer;">
                     <a href="movie-detail.html?id=moon-fall" class="poster" style="background-image: url('images/Moon_Fall.jpg')" aria-label="Xem chi tiết Moon Fall">
                         <div class="poster-overlay">
                             <span class="overlay-text">Xem thêm</span>
@@ -214,7 +214,7 @@
                         <div class="tags"><span class="tag">2D</span><span class="tag">Viễn Tưởng</span></div>
                     </div>
                 </div>
-                <div class="movie-card">
+                <div class="movie-card" onclick="window.location.href='movie-detail.html?id=your-name'" style="cursor:pointer;">
                     <a href="movie-detail.html?id=your-name" class="poster" style="background-image: url('images/Kimi-no-Na-wa.-Visual.jpg')" aria-label="Xem chi tiết Your Name">
                         <div class="poster-overlay">
                             <span class="overlay-text">Xem thêm</span>
@@ -282,7 +282,7 @@
                 <div class="link-column">
                     <h4>KHÁM PHÁ</h4>
                     <ul>
-                        <li><a href="#">Phim Đang Chiếu</a></li>
+                        <li><a href="movies.html?tab=now-showing">Phim Đang Chiếu</a></li>
                         <li><a href="#">Phim Sắp Chiếu</a></li>
                         <li><a href="#">Rạp Phim</a></li>
                         <li><a href="#">Khuyến Mãi</a></li>
