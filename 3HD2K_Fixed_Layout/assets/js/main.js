@@ -160,6 +160,9 @@ if (userBtn) {
 if (userDropdown) {
     userDropdown.addEventListener('click', (e) => {
         e.stopPropagation(); 
+        if (e.target.closest('a')) {
+            if (userBtn) userBtn.classList.remove('active');
+        }
     });
 }
 

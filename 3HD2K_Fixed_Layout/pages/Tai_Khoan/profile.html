@@ -22,7 +22,7 @@
                 <a href="../../index.html">Trang chủ</a>
                 <a href="../movies.html?tab=now-showing">Phim Đang Chiếu</a>
                 <a href="../cinemas.html">Cụm Rạp</a>
-                <a href="#">Khuyến Mãi</a>
+                <a href="profile.html#offers">Khuyến Mãi</a>
                 <a href="#">Đặt vé</a>
             </nav>
         </div>
@@ -508,7 +508,7 @@
                         <li><a href="../movies.html?tab=now-showing">Phim Đang Chiếu</a></li>
                         <li><a href="../movies.html?tab=coming-soon">Phim Sắp Chiếu</a></li>
                         <li><a href="../cinemas.html">Rạp Phim</a></li>
-                        <li><a href="#">Khuyến Mãi</a></li>
+                        <li><a href="profile.html#offers">Khuyến Mãi</a></li>
                     </ul>
                 </div>
                 <div class="link-column">
@@ -662,6 +662,18 @@
             function switchTab(tabId) {
                 // Update URL hash without scrolling
                 history.replaceState(null, null, '#' + tabId);
+
+                // Handle top navbar active state for Khuyen Mai
+                const navLinks = document.querySelectorAll('.nav-links a');
+                navLinks.forEach(link => {
+                    if (link.textContent.trim().toLowerCase() === 'khuyến mãi' || link.getAttribute('href').includes('offers')) {
+                        if (tabId === 'offers') {
+                            link.classList.add('active');
+                        } else {
+                            link.classList.remove('active');
+                        }
+                    }
+                });
 
                 // Remove active class from all menu items
                 menuItems.forEach(i => i.classList.remove('active'));
@@ -1031,3 +1043,4 @@
     </script>
 </body>
 </html>
+
