@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3HD2K - Cụm Rạp</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/cinemas.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/cinemas.css">
     <!-- Load custom fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,9 +19,9 @@
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="nav-left">
-            <a href="index.html" class="logo">3HD2K</a>
+            <a href="../index.html" class="logo">3HD2K</a>
             <nav class="nav-links">
-                <a href="index.html">Trang chủ</a>
+                <a href="../index.html">Trang chủ</a>
                 <a href="movies.html?tab=now-showing">Phim Đang Chiếu</a>
                 <a href="cinemas.html" class="active">Cụm Rạp</a>
                 <a href="#">Khuyến Mãi</a>
@@ -36,70 +36,23 @@
             </div>
             <div class="notif-btn" id="notif-btn">
                 <i class="fas fa-bell"></i>
-                <span class="notif-dot" id="notif-dot"></span>
                 <!-- Dropdown -->
                 <div class="notif-dropdown" id="notif-dropdown">
                     <div class="notif-header">
                         <span class="notif-title">Thông báo</span>
-                        <button class="notif-mark-all" id="notif-mark-all">Đánh dấu tất cả đã đọc</button>
                     </div>
-                    <ul class="notif-list">
-                        <li class="notif-item unread">
-                            <div class="notif-icon-wrap red"><i class="fas fa-ticket-alt"></i></div>
-                            <div class="notif-body">
-                                <p class="notif-text"><strong>Đặt vé thành công!</strong> F1: The Movie – Suất 20:00, 15/06/2026</p>
-                                <span class="notif-time">2 phút trước</span>
-                            </div>
-                        </li>
-                        <li class="notif-item unread">
-                            <div class="notif-icon-wrap yellow"><i class="fas fa-star"></i></div>
-                            <div class="notif-body">
-                                <p class="notif-text"><strong>Phim mới ra mắt!</strong> War Machine (2026) đang chiếu tại 3HD2K</p>
-                                <span class="notif-time">1 giờ trước</span>
-                            </div>
-                        </li>
-                        <li class="notif-item">
-                            <div class="notif-icon-wrap blue"><i class="fas fa-tag"></i></div>
-                            <div class="notif-body">
-                                <p class="notif-text"><strong>Khuyến mãi:</strong> Mua 2 tặng 1 vé bắp mỗi thứ 4 hàng tuần</p>
-                                <span class="notif-time">Hôm qua</span>
-                            </div>
-                        </li>
-                        <li class="notif-item">
-                            <div class="notif-icon-wrap red"><i class="fas fa-film"></i></div>
-                            <div class="notif-body">
-                                <p class="notif-text"><strong>Nhắc nhở:</strong> Phim bạn quan tâm – Gran Turismo sắp chiếu vào 20/06</p>
-                                <span class="notif-time">2 ngày trước</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="notifications.html" class="notif-view-all">Xem tất cả thông báo <i class="fas fa-chevron-right"></i></a>
-                </div>
-            </div>
-            <div class="user-btn" id="user-btn">
-                <div class="avatar-wrapper">
-                    <img src="images/avatar.jpg" alt="User Avatar" class="user-avatar">
-                </div>
-                <!-- Dropdown -->
-                <div class="user-dropdown" id="user-dropdown">
-                    <div class="user-header">
-                        <img src="images/avatar.jpg" alt="User Avatar" class="user-header-avatar">
-                        <div class="user-info">
-                            <span class="user-name">Sigma Sicula</span>
-                            <span class="user-points"><i class="fas fa-crown" style="color: #ffc107;"></i> VIP - 1,250 điểm</span>
-                        </div>
-                    </div>
-                    <ul class="user-menu-list">
-                        <li><a href="#"><i class="fas fa-user-circle"></i> Thông tin cá nhân</a></li>
-                        <li><a href="#"><i class="fas fa-ticket-alt"></i> Lịch sử đặt vé</a></li>
-                        <li><a href="#"><i class="fas fa-gift"></i> Ưu đãi của tôi</a></li>
-                        <li><a href="#"><i class="fas fa-cog"></i> Cài đặt</a></li>
-                    </ul>
-                    <div class="user-menu-footer">
-                        <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                    <div class="notif-empty" style="display: flex; flex-direction: column; align-items: center; padding: 40px 20px; color: rgba(255,255,255,0.5);">
+                        <i class="fas fa-user-lock" style="font-size: 3rem; margin-bottom: 15px; color: rgba(255,255,255,0.2);"></i>
+                        <p style="margin-bottom: 20px; text-align: center;">Vui lòng đăng nhập để xem thông báo</p>
+                        <a href="Dang_Nhap/login.html" class="btn-primary" style="background: var(--primary-red); color: white; padding: 10px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: opacity 0.3s;">Đăng nhập ngay</a>
                     </div>
                 </div>
             </div>
+            <a href="Dang_Nhap/login.html" class="user-btn" style="text-decoration: none; color: white;">
+                <div class="avatar-wrapper" style="background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.2);">
+                    <i class="fas fa-user" style="color: rgba(255,255,255,0.6); font-size: 1rem;"></i>
+                </div>
+            </a>
         </div>
     </header>
 
@@ -211,8 +164,8 @@
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="js/data.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/cinemas.js"></script>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/cinemas.js"></script>
 </body>
 </html>

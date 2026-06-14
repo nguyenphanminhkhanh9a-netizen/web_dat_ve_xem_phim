@@ -70,7 +70,7 @@ const nowShowingMovies = [
         formats: ["2D"],
         genre: "Hành Động, Khoa Học Viễn Tưởng",
         cinema: "Q1",
-        poster: "https://m.media-amazon.com/images/M/MV5BOGI1MzU4MGMtYjY5MC00MDNjLWI3OTMtYjM5YzcwOTg5NWNmXkEyXkFqcGc@.jpg",
+        poster: "images/battle_la.jpg",
         backdrop: "https://occ-0-8407-116.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABUqJNDbTjtk_ks55Cn2DDKJr-2oU_AzL7yvpcMhg4FFX75qGsJhbhIIWzGkFdQmEBzCxAYuWcRmrfSIH4f7DLh5HCK9haTZHUsxw.jpg?r=10a",
         synopsis: "Một đội thủy quân lục chiến Mỹ đang chiến đấu chống lại cuộc xâm lược của người ngoài hành tinh tại Los Angeles. Trung sĩ Nantz phải dẫn đầu một nhóm binh lính vào vùng chiến sự để giải cứu những thường dân còn sống sót trước khi không quân tiến hành ném bom hủy diệt toàn bộ khu vực.",
         director: "Jonathan Liebesman",
@@ -104,7 +104,7 @@ const nowShowingMovies = [
         formats: ["2D", "4DX"],
         genre: "Hành Động, Phiêu Lưu",
         cinema: "Q7",
-        poster: "https://m.media-amazon.com/images/M/MV5BMmM1ZTc5ZTYtOTM2My00MjBmLWE5NzktYzkyYzdlYWE3ZDAzXkEyXkFqcGc@.jpg",
+        poster: "images/war_machine.jpg",
         backdrop: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80",
         synopsis: "Trong một thế giới tương lai nơi robot chiến đấu thống trị chiến trường, một cựu chiến binh phải đối mặt với kẻ thù nguy hiểm nhất của mình — chính cỗ máy chiến tranh anh ta từng tin tưởng. Cuộc hành trình đầy hiểm nguy đưa anh xuyên qua những vùng xung đột tàn khốc để tìm lại nhân tính đã bị chiến tranh cướp mất.",
         director: "David Ayer",
@@ -138,7 +138,7 @@ const nowShowingMovies = [
         formats: ["2D", "IMAX"],
         genre: "Hành Động, Thể Thao",
         cinema: "Q1",
-        poster: "https://m.media-amazon.com/images/M/MV5BNGI0MDI4NjEtOWU3ZS00ODQyLWFhYTgtNGYxM2ZkM2Q2YjE3XkEyXkFqcGc@.jpg",
+        poster: "images/f1_movie.jpg",
         backdrop: "https://images.unsplash.com/photo-1541889413457-4aec9b418977?auto=format&fit=crop&w=1920&q=80",
         synopsis: "Dựa trên câu chuyện có thật về đội đua APXGP, một tay đua huyền thoại đã về hưu trở lại đường đua F1 để hướng dẫn một tài năng trẻ đầy tiềm năng. Hai thế hệ tay đua cùng nhau đối mặt với những áp lực khắc nghiệt nhất của môn thể thao vua tốc độ.",
         director: "Joseph Kosinski",
@@ -172,7 +172,7 @@ const nowShowingMovies = [
         formats: ["2D", "IMAX"],
         genre: "Hành Động, Khoa Học Viễn Tưởng",
         cinema: "Q7",
-        poster: "https://m.media-amazon.com/images/M/MV5BYWYyOGQzOGYtMGQ1My00ZWYxLTgzZjktZWYzN2IwYjkxYzM0XkEyXkFqcGc@.jpg",
+        poster: "images/iron_man2.jpg",
         backdrop: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80",
         synopsis: "Tony Stark đang đối mặt với hai mối đe dọa lớn: chính phủ muốn tịch thu bộ giáp Iron Man và một kẻ thù bí ẩn đến từ Nga mang mối hận thù sâu sắc. Trong khi đó, bộ giáp dần phá hủy cơ thể anh từ bên trong.",
         director: "Jon Favreau",
@@ -613,3 +613,18 @@ const mockReviews = [
         hasSpoiler: false
     }
 ];
+
+// Normalize image paths based on current URL depth
+const _isPagesDir = window.location.pathname.includes('/pages/');
+const _ASSET_PREFIX = _isPagesDir ? '../assets/' : 'assets/';
+
+const _normalizePath = (path) => {
+    if (!path || path.startsWith('http') || path.startsWith('assets/')) return path;
+    if (path.startsWith('images/')) return _ASSET_PREFIX + path;
+    return path;
+};
+
+if (typeof heroMovies !== 'undefined') heroMovies.forEach(m => { m.bg = _normalizePath(m.bg); m.poster = _normalizePath(m.poster); });
+if (typeof nowShowingMovies !== 'undefined') nowShowingMovies.forEach(m => { m.poster = _normalizePath(m.poster); m.bg = _normalizePath(m.bg); });
+if (typeof comingSoonMovies !== 'undefined') comingSoonMovies.forEach(m => { m.poster = _normalizePath(m.poster); m.bg = _normalizePath(m.bg); });
+

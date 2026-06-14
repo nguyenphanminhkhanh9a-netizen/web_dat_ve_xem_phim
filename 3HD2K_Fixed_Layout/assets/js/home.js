@@ -137,7 +137,7 @@ function renderNowShowing(movies) {
     movies.forEach(movie => {
         const tagsHtml = movie.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
         
-        const detailUrl = `movie-detail.html?id=${movie.id}`;
+        const detailUrl = `pages/movie-detail.html?id=${movie.id}`;
         const cardHtml = `
             <div class="movie-card" onclick="window.location.href='${detailUrl}'" style="cursor:pointer;">
                 <a href="${detailUrl}" class="poster" style="background-image: url('${movie.poster}')" aria-label="Xem chi tiết ${movie.title}">
