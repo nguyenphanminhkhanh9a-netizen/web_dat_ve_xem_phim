@@ -32,8 +32,72 @@
                 <input type="text" id="search-input" placeholder="Tìm kiếm phim..." />
                 <span id="search-text">Tìm kiếm</span>
             </div>
-            <i class="fas fa-bell"></i>
-            <i class="fas fa-user"></i>
+            <div class="notif-btn" id="notif-btn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-dot" id="notif-dot"></span>
+                <!-- Dropdown -->
+                <div class="notif-dropdown" id="notif-dropdown">
+                    <div class="notif-header">
+                        <span class="notif-title">Thông báo</span>
+                        <button class="notif-mark-all" id="notif-mark-all">Đánh dấu tất cả đã đọc</button>
+                    </div>
+                    <ul class="notif-list">
+                        <li class="notif-item unread">
+                            <div class="notif-icon-wrap red"><i class="fas fa-ticket-alt"></i></div>
+                            <div class="notif-body">
+                                <p class="notif-text"><strong>Đặt vé thành công!</strong> F1: The Movie – Suất 20:00, 15/06/2026</p>
+                                <span class="notif-time">2 phút trước</span>
+                            </div>
+                        </li>
+                        <li class="notif-item unread">
+                            <div class="notif-icon-wrap yellow"><i class="fas fa-star"></i></div>
+                            <div class="notif-body">
+                                <p class="notif-text"><strong>Phim mới ra mắt!</strong> War Machine (2026) đang chiếu tại 3HD2K</p>
+                                <span class="notif-time">1 giờ trước</span>
+                            </div>
+                        </li>
+                        <li class="notif-item">
+                            <div class="notif-icon-wrap blue"><i class="fas fa-tag"></i></div>
+                            <div class="notif-body">
+                                <p class="notif-text"><strong>Khuyến mãi:</strong> Mua 2 tặng 1 vé bắp mỗi thứ 4 hàng tuần</p>
+                                <span class="notif-time">Hôm qua</span>
+                            </div>
+                        </li>
+                        <li class="notif-item">
+                            <div class="notif-icon-wrap red"><i class="fas fa-film"></i></div>
+                            <div class="notif-body">
+                                <p class="notif-text"><strong>Nhắc nhở:</strong> Phim bạn quan tâm – Gran Turismo sắp chiếu vào 20/06</p>
+                                <span class="notif-time">2 ngày trước</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="notifications.html" class="notif-view-all">Xem tất cả thông báo <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="user-btn" id="user-btn">
+                <div class="avatar-wrapper">
+                    <img src="images/avatar.jpg" alt="User Avatar" class="user-avatar">
+                </div>
+                <!-- Dropdown -->
+                <div class="user-dropdown" id="user-dropdown">
+                    <div class="user-header">
+                        <img src="images/avatar.jpg" alt="User Avatar" class="user-header-avatar">
+                        <div class="user-info">
+                            <span class="user-name">Sigma Sicula</span>
+                            <span class="user-points"><i class="fas fa-crown" style="color: #ffc107;"></i> VIP - 1,250 điểm</span>
+                        </div>
+                    </div>
+                    <ul class="user-menu-list">
+                        <li><a href="#"><i class="fas fa-user-circle"></i> Thông tin cá nhân</a></li>
+                        <li><a href="#"><i class="fas fa-ticket-alt"></i> Lịch sử đặt vé</a></li>
+                        <li><a href="#"><i class="fas fa-gift"></i> Ưu đãi của tôi</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Cài đặt</a></li>
+                    </ul>
+                    <div class="user-menu-footer">
+                        <a href="#" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 

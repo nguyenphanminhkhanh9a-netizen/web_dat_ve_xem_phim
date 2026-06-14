@@ -71,7 +71,7 @@ const nowShowingMovies = [
         genre: "Hành Động, Khoa Học Viễn Tưởng",
         cinema: "Q1",
         poster: "https://m.media-amazon.com/images/M/MV5BOGI1MzU4MGMtYjY5MC00MDNjLWI3OTMtYjM5YzcwOTg5NWNmXkEyXkFqcGc@.jpg",
-        backdrop: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80",
+        backdrop: "https://occ-0-8407-116.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABUqJNDbTjtk_ks55Cn2DDKJr-2oU_AzL7yvpcMhg4FFX75qGsJhbhIIWzGkFdQmEBzCxAYuWcRmrfSIH4f7DLh5HCK9haTZHUsxw.jpg?r=10a",
         synopsis: "Một đội thủy quân lục chiến Mỹ đang chiến đấu chống lại cuộc xâm lược của người ngoài hành tinh tại Los Angeles. Trung sĩ Nantz phải dẫn đầu một nhóm binh lính vào vùng chiến sự để giải cứu những thường dân còn sống sót trước khi không quân tiến hành ném bom hủy diệt toàn bộ khu vực.",
         director: "Jonathan Liebesman",
         cast: [
