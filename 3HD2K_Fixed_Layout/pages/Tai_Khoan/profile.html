@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/custom-select.css">
 </head>
 <body>
     <!-- NAVBAR -->
@@ -551,19 +552,20 @@
 
             // Load thông tin từ localStorage
             const userName = localStorage.getItem('userName') || 'Khách';
+            const userEmail = localStorage.getItem('userEmail') || 'user@example.com';
             const userAvatar = localStorage.getItem('userAvatar') || 'https://i.pravatar.cc/150?img=11';
             
             // Tìm user hiện tại trong danh sách để lấy thông tin chi tiết
             let users = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
-            // Giả sử có lưu curUserEmail khi đăng nhập để tìm chính xác, 
-            // nhưng hiện tại ta có thể tìm theo tên (tạm thời)
-            let currentUser = users.find(u => u.fullname === userName);
+            
+            let currentUser = users.find(u => u.email === userEmail);
 
             if (!currentUser) {
                 // Tạo mock data nếu không tìm thấy (trường hợp tài khoản tạo ảo)
                 currentUser = {
                     fullname: userName,
-                    email: "user@example.com",
+                    email: userEmail,
+                    password: "123", // Mock password
                     avatar: userAvatar,
                     phone: "",
                     gender: "male",
@@ -792,11 +794,6 @@
             const pwdError = document.getElementById('pwd-error');
             const pwdSuccess = document.getElementById('pwd-success');
 
-            // Initialize default password if not exists
-            if (!localStorage.getItem('userPassword')) {
-                localStorage.setItem('userPassword', '123456');
-            }
-
             btnChangePwd.addEventListener('click', () => {
                 pwdModal.style.display = 'flex';
                 pwdForm.reset();
@@ -823,7 +820,7 @@
                 const newPwd = document.getElementById('new-pwd').value;
                 const confirmPwd = document.getElementById('confirm-pwd').value;
 
-                const savedPwd = localStorage.getItem('userPassword');
+                const savedPwd = currentUser.password;
 
                 if (currentPwd !== savedPwd) {
                     pwdError.textContent = "Mật khẩu hiện tại không chính xác.";
@@ -844,7 +841,15 @@
                 }
 
                 // Save new password
-                localStorage.setItem('userPassword', newPwd);
+                currentUser.password = newPwd;
+                const index = users.findIndex(u => u.email === currentUser.email);
+                if (index !== -1) {
+                    users[index] = currentUser;
+                } else {
+                    users.push(currentUser);
+                }
+                localStorage.setItem('registeredUsers', JSON.stringify(users));
+
                 pwdSuccess.textContent = "Đổi mật khẩu thành công!";
                 pwdSuccess.style.display = 'block';
                 pwdError.style.display = 'none';
@@ -1041,6 +1046,8 @@
             });
         });
     </script>
+<script src="../../assets/js/custom-select.js"></script>
 </body>
 </html>
+
 

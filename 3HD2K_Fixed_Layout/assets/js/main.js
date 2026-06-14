@@ -55,7 +55,7 @@ if (isLoggedIn) {
                             </div>
                         </li>
                     </ul>
-                    <a href="${isPagesDir ? 'notifications.html' : 'pages/notifications.html'}" class="notif-view-all">Xem tất cả thông báo <i class="fas fa-chevron-right"></i></a>
+                    <a href="${isPagesDir ? (window.location.pathname.includes('/Tai_Khoan/') ? '../notifications.html' : 'notifications.html') : 'pages/notifications.html'}" class="notif-view-all">Xem tất cả thông báo <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
             <div class="user-btn" id="user-btn">
@@ -93,6 +93,7 @@ if (isLoggedIn) {
                     e.preventDefault();
                     localStorage.removeItem('isLoggedIn');
                     localStorage.removeItem('userName');
+                    localStorage.removeItem('userEmail');
                     localStorage.removeItem('userAvatar');
                     window.location.reload();
                 });
